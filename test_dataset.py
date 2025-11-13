@@ -3,10 +3,10 @@ from ultralytics import YOLO
 
 # Load 2 model
 model_trained = YOLO(r"D:\yolov5\runs\detect\train_customdata\weights\best.pt")  # Model đã fine-tune
-model_pretrained = YOLO(r'yolov5s.pt')  # Model gốc chưa fine-tune
+model_pretrained = YOLO(r"yolov5s.pt")  # Model gốc chưa fine-tune
 
 # Mở video
-cap = cv2.VideoCapture(r'D:\yolov5\video_demo\NKKN-VoThiSau 2017-07-18_08_00_00_000.asf')
+cap = cv2.VideoCapture(r"D:\yolov5\video_demo\NKKN-VoThiSau 2017-07-18_08_00_00_000.asf")
 
 target_classes = [1, 2, 3, 5, 7]
 
@@ -25,10 +25,10 @@ while cap.isOpened():
 
     # Gộp hai kết quả song song
     combined = cv2.hconcat([frame_pretrained, frame_trained])
-    cv2.imshow('Left: Pretrained | Right: Fine-tuned', combined)
+    cv2.imshow("Left: Pretrained | Right: Fine-tuned", combined)
 
     # Bấm 'q' để thoát
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
 cap.release()
