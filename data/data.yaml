@@ -4,4 +4,4 @@ val: r"D:\datasets\data_CanTho_v5\images\valid"
 test: r"D:\datasets\data_CanTho_v5\images\test"
 
 nc: 4
-names: ['bus', 'car', 'motorbike', 'truck']
+names: ["bus", "car", "motorbike", "truck"]
